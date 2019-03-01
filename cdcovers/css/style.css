@@ -1,0 +1,96 @@
+body{
+	font-family: sans-serif;
+	background-color: #3FE0D0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	justify-items: center;
+	grid-gap: 1em;
+}
+h1 {
+	grid-column: 1/-1; /*Dit is de laatste grid-lijn*/
+}
+footer{
+	grid-column: 1/-1;
+}
+
+/*body {
+    webkit-animation:spin .1s linear infinite;
+    -moz-animation:spin .1s linear infinite;
+    animation:spin .1s linear infinite;
+}*/
+
+.cd {
+	width: 300px;
+	height: 300px;
+	overflow: hidden;
+	font-size: 80%;
+}
+.cd img {
+	width: 300px;
+	height: 300px;
+}
+
+.cd article {
+	position: relative;
+	background-color: rgba(255, 255, 255 ,0.8);
+	margin-top: 0;
+	padding: 1em;
+	height: 300px;
+	box-sizing: border-box;	
+	overflow: auto;
+	/*transition: margin-top 1s ease-in-out;*/
+}
+
+@keyframes naarBoven {
+	0% {margin-top: 0;}
+	30% {margin-top: -150px;}
+	50% {margin-top: -225px;}
+	70% {margin-top: -265px;}
+	90% {margin-top: -285px;}
+	20%, 40%, 60%, 80%, 100% {margin-top:-303px;}
+}
+
+@-webkit-keyframes naarBoven {
+	0% {margin-top: 0;}
+	30% {margin-top: -150px;}
+	50% {margin-top: -225px;}
+	70% {margin-top: -265px;}
+	90% {margin-top: -285px;}
+	20%, 40%, 60%, 80%, 100% {margin-top:-303px;}
+}
+@-webkit-keyframes naarBeneden {
+    0% {margin-top: -303px}
+    30% {margin-top: -150px;}
+    50% {margin-top: -75px;}
+    70% {margin-top: -38px;}
+    90% {margin-top: -19px;}
+    20%, 40%, 60%, 80%, 100% {margin-top: 0;}
+}
+@keyframes naarBeneden {
+    0% {margin-top: -303px}
+    30% {margin-top: -150px;}
+    50% {margin-top: -75px;}
+    70% {margin-top: -38px;}
+    90% {margin-top: -19px;}
+    20%, 40%, 60%, 80%, 100% {margin-top: 0;}
+}
+
+.cd.welMuis article {
+	animation: naarBoven 1s forwards;
+	cursor: pointer;
+}
+
+.cd.geenMuis article {
+    animation: naarBeneden 1s forwards;
+}
+
+.cd article h3 {
+	margin-top: 0;
+}
+
+/*Voor het geval dat het werkt met transition:;
+.cd:hover {
+	margin-top: -303px;
+	
+}
+*/
